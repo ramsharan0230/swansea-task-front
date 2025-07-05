@@ -1,5 +1,5 @@
 <template>
     <div>
-        <p>Hello world</p>
+        <task-quotation-form></task-quotation-form>
     </div>
 </template>

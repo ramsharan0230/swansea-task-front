@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
-    "axios": "^1.9.0",
+    "axios": "^1.10.0",
     "flowbite": "^3.1.2",
     "flowbite-vue": "^0.2.1",
+    "form-data": "^4.0.3",
     "nuxt": "^3.17.5",
     "papaparse": "^5.5.3",
     "vue": "^3.5.16",
