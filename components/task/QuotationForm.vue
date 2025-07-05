@@ -235,6 +235,11 @@ const exportCsv = () => {
       >
         Calculate Profit
       </button>
+
+      <!-- download reports with different versions -->
+        <task-report-list />
+      <!-- ends -->
+
       <div class="text-center my-4" v-if="loading">
         <pulse-loader :loading="loading" color="#3498db" size="15px" />
       </div>

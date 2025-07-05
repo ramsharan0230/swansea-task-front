@@ -57,30 +57,6 @@ onBeforeUnmount(() => {
         >
           Export CSV
         </button>
-        <!-- Dropdown toggle -->
-        <button
-          type="button"
-          @click="showDropdown = !showDropdown"
-          class="bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-1.5 rounded inline-flex items-center"
-        >
-          Reports
-          <svg
-            class="w-2.5 h-2.5 ml-2"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 10 6"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 1 4 4 4-4"
-            />
-          </svg>
-        </button>
-
-        <!-- Dropdown content -->
         <div
           v-show="showDropdown"
           class="absolute right-0 top-10 z-10 w-44 font-normal bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600"
