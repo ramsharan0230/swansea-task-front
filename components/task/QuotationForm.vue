@@ -4,9 +4,11 @@ import QuotationSummary from "./QuotationSummary.vue";
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 import { useQuote } from "@/composables/useQuote";
 import Products from "./Products.vue";
+const loading = ref(false);
 
 const { $axios } = useNuxtApp();
 const { calculateQuote } = useQuote();
+const { exportReport } = useQuoteExport($axios, loading);
 
 const allProducts = ref<any[]>([]);
 const items = ref<any[]>([]);
@@ -19,7 +21,6 @@ const targetMargin = ref(0);
 const result = ref<any>(null);
 const ai_suggestions = ref<string>("");
 
-const loading = ref(false);
 const suggestion_loader = ref(false);
 
 onMounted(async () => {
@@ -80,6 +81,31 @@ async function handleSubmit() {
     suggestion_loader.value = false;
   }
 }
+
+const exportPdf = () => {
+  exportReport("pdf", {
+    selectedItems: items.value,
+    allProducts: allProducts.value,
+    laborHours: laborHours.value,
+    laborCost: laborCost.value,
+    fixedOverheads: fixedOverheads.value,
+    targetMargin: targetMargin.value,
+    ai_suggestions: ai_suggestions.value,
+  });
+};
+
+const exportCsv = () => {
+  exportReport("csv", {
+    selectedItems: items.value,
+    allProducts: allProducts.value,
+    laborHours: laborHours.value,
+    laborCost: laborCost.value,
+    fixedOverheads: fixedOverheads.value,
+    targetMargin: targetMargin.value,
+    ai_suggestions: ai_suggestions.value,
+  });
+};
+
 </script>
 
 <template>
@@ -229,6 +255,8 @@ async function handleSubmit() {
         :labor-cost="laborCost"
         :fixed-overheads="fixedOverheads"
         :ai_suggestions="ai_suggestions"
+        @export:pdf="exportPdf"
+        @export:csv="exportCsv"
       />
     </form>
     <Products :products="allProducts"></Products>
