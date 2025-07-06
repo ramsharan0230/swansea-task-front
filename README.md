@@ -5,6 +5,8 @@
 ### Table of contents
 
 -   [About](#about)
+-   [Motivation](#motivation)
+-   [Design Decisions](#design-decisions)
 -   [Features](#features)
 -   [Tech Stacks](#tech-stacks)
 -   [Installation Instructions](#installation-instructions)
@@ -28,6 +30,13 @@ Smart Quote enables businesses to analyze cost structures and profitability for 
 
 The frontend is tightly integrated with a Laravel backend and OpenAI for intelligent recommendations.
 
+### Motivation
+
+The frontend is designed to provide a smooth, modern, and responsive user experience for managing customer quotations. The goal was to create an intuitive interface that empowers users to easily input data, visualize profitability health through color-coded signals, and generate actionable insights.
+
+To enhance the decision-making process, i integrated OpenAI’s GPT-4 API to provide AI-powered suggestions that help users optimize their quotes, identify low-margin items, and improve profitability. This AI integration adds significant value by giving intelligent, context-aware recommendations directly within the frontend interface.
+
+By building the frontend with Nuxt 3, i leverage the power of Vue 3’s Composition API and Vite’s fast bundling, ensuring fast load times, excellent developer experience, and future scalability. The project is structured to be maintainable and extensible, with clear separation of concerns.
 
 ### Features
 
@@ -45,8 +54,21 @@ The frontend is tightly integrated with a Laravel backend and OpenAI for intelli
 | Tailwind CSS layout                                                                              | Fully responsive and mobile-first UI                                                           |
 | Uses [Flowbite](https://flowbite.com/)                                                           | Pre-built components and better UI/UX experience                                                |
 | Report filtering     
-            
-            
+
+### Design Decisions
+
+Framework Choice: Nuxt 3 was chosen for its modern Vue 3 foundation, strong ecosystem, built-in routing, and excellent support for server-side rendering and static generation — all helping improve performance and SEO.
+
+State Management: Instead of Pinia, the app uses composables to manage state reactively. This reduces dependencies, simplifies the codebase, and leverages Vue 3’s Composition API for reusable logic.
+
+Styling: Tailwind CSS combined with Flowbite UI components was selected to rapidly build a clean, responsive, and accessible interface without writing excessive custom CSS.
+
+API Integration: The frontend follows an API-first approach, relying heavily on a Laravel backend for data processing, profitability calculations, and AI suggestion retrieval. This separation of concerns improves maintainability and scalability.
+
+AI Integration: OpenAI’s GPT-4 API is integrated to provide real-time, intelligent suggestions based on the user’s quote data, enabling smarter quoting decisions without leaving the frontend.
+
+Code Quality: Emphasis was placed on writing clean, modular, and well-documented code, following best practices such as DRY (Don’t Repeat Yourself), KISS (Keep It Simple Stupid), and SRP (Single Responsibility Principle).            
+
 ### Tech Stacks
     - Nuxt 3 (Vue 3 Composition API, Vite)
     - TypeScript
