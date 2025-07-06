@@ -45,7 +45,8 @@ The frontend is tightly integrated with a Laravel backend and OpenAI for intelli
 | Tailwind CSS layout                                                                              | Fully responsive and mobile-first UI                                                           |
 | Uses [Flowbite](https://flowbite.com/)                                                           | Pre-built components and better UI/UX experience                                                |
 | Report filtering     
-            |
+            
+            
 ### Tech Stacks
     - Nuxt 3 (Vue 3 Composition API, Vite)
     - TypeScript
