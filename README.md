@@ -2,6 +2,14 @@
 
 #### Smart Quote Frontend is a modern, responsive, and lightweight application built with Nuxt 3, designed to interact with the Smart Quote backend system. It empowers users to create, manage, and optimize customer quotations using AI-enhanced insights via OpenAI GPT-4. This application communicates with the Laravel backend to perform profitability calculations, receive AI-generated suggestions, and download PDF/CSV versions of quote summaries.
 
+### Motivation
+
+The frontend is designed to provide a smooth, modern, and responsive user experience for managing customer quotations. The goal was to create an intuitive interface that empowers users to easily input data, visualize profitability health through color-coded signals, and generate actionable insights.
+
+To enhance the decision-making process, i integrated OpenAI’s GPT-4 API to provide AI-powered suggestions that help users optimize their quotes, identify low-margin items, and improve profitability. This AI integration adds significant value by giving intelligent, context-aware recommendations directly within the frontend interface.
+
+By building the frontend with Nuxt 3, i leverage the power of Vue 3’s Composition API and Vite’s fast bundling, ensuring fast load times, excellent developer experience, and future scalability. The project is structured to be maintainable and extensible, with clear separation of concerns.
+
 ### Table of contents
 
 -   [About](#about)
@@ -29,14 +37,6 @@ Smart Quote enables businesses to analyze cost structures and profitability for 
     - Export versioned reports in PDF/CSV formats
 
 The frontend is tightly integrated with a Laravel backend and OpenAI for intelligent recommendations.
-
-### Motivation
-
-The frontend is designed to provide a smooth, modern, and responsive user experience for managing customer quotations. The goal was to create an intuitive interface that empowers users to easily input data, visualize profitability health through color-coded signals, and generate actionable insights.
-
-To enhance the decision-making process, i integrated OpenAI’s GPT-4 API to provide AI-powered suggestions that help users optimize their quotes, identify low-margin items, and improve profitability. This AI integration adds significant value by giving intelligent, context-aware recommendations directly within the frontend interface.
-
-By building the frontend with Nuxt 3, i leverage the power of Vue 3’s Composition API and Vite’s fast bundling, ensuring fast load times, excellent developer experience, and future scalability. The project is structured to be maintainable and extensible, with clear separation of concerns.
 
 ### Features
 
