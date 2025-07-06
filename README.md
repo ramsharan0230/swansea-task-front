@@ -35,21 +35,18 @@ The frontend is tightly integrated with a Laravel backend and OpenAI for intelli
 
 | Smart Quote Features                                                                                                                                |
 | :--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Built on [Nuxt](https://nuxt.com/)3                                                                                                          |
-| Built on [Vue](https://getbootstrap.com/) 3.1                                                                                                        |
-| Uses [Node Server](https://npmjs.com) 11                                                                                      
-
-| Color-coded quote health (Green, Amber, Red)
-                                                                                           |
-| Downloadable quote reports in the format of PDF and CSV
-                                                                               |
-| Users can view/download previous versions of reports                                                |
-| Calculates gross margin, labor cost, overheads, and highlights low-margin line items                                                                 |
-| Tailwind CSS-based fully responsive layout                                                        |
-| Uses Flowbite for better UI/UX experience                                                                        |
-| Filter historical reports based on IP
-
-            |
+| Built on [Nuxt 3](https://nuxt.com/)                                                             | Modern full-stack Vue framework                                                                 |
+| Built on [Vue 3.1](https://vuejs.org/)                                                           | Composition API and reactive framework                                                         |
+| Uses [Node.js 18+](https://nodejs.org/)                                                          | Server runtime                                                                                  |
+| Color-coded quote health                                                                         | Displays health as Green, Amber, or Red                                                         |
+| PDF and CSV export                                                                               | Generate and download reports in multiple formats                                               |
+| Report versioning                                                                                | Users can view/download previous versions of reports                                            |
+| Profitability calculations                                                                       | Calculates gross margin, labor cost, overheads, and highlights low-margin line items           |
+| Tailwind CSS layout                                                                              | Fully responsive and mobile-first UI                                                           |
+| Uses [Flowbite](https://flowbite.com/)                                                           | Pre-built components and better UI/UX experience                                                |
+| Report filtering     
+            
+            
 ### Tech Stacks
     - Nuxt 3 (Vue 3 Composition API, Vite)
     - TypeScript
