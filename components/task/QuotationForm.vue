@@ -10,7 +10,16 @@ const { $axios } = useNuxtApp();
 const { calculateQuote } = useQuote();
 const { exportReport } = useQuoteExport($axios, loading);
 
+const pagination = ref({
+    currentPage: 1,
+    perPage: 10,
+    total: 0,
+    lastPage: 1
+});
+
 const allProducts = ref<any[]>([]);
+const paginatedProducts = ref<any[]>([]);
+
 const items = ref<any[]>([]);
 
 const laborHours = ref(0);
@@ -24,9 +33,39 @@ const ai_suggestions = ref<string>("");
 const suggestion_loader = ref(false);
 
 onMounted(async () => {
-  const { data } = await $axios.get("/products");
-  allProducts.value = data.payload;
+  await fetchProducts();
+  await fetchPaginatedProducts();
 });
+
+async function fetchProducts() {
+  const { data } = await $axios.get("/products", {
+    params: {
+      paginate: false,
+    }
+  });
+  allProducts.value = data.payload.products || [];
+}
+async function fetchPaginatedProducts() {
+  const { data } = await $axios.get("/products", {
+    params: {
+      page: pagination.value.currentPage,
+      per_page: pagination.value.perPage,
+    },
+  });
+
+  paginatedProducts.value = data.payload.products;
+  pagination.value = {
+    currentPage: data.payload.pagination.current_page,
+    perPage: data.payload.pagination.per_page,
+    total: data.payload.pagination.total,
+    lastPage: data.payload.pagination.last_page
+  };
+}
+
+function handlePageChange(page: number) {
+    pagination.value.currentPage = page;
+    fetchPaginatedProducts();
+}
 
 function addItem() {
   items.value.push({
@@ -266,7 +305,11 @@ const exportCsv = () => {
       </form>
     </div>
     <div class="lg:col-span-4 border-l border-gray-300 pl-6">
-      <Products :products="allProducts"></Products>
+      <Products 
+        :products="paginatedProducts"
+        :pagination="pagination"
+        @page-changed="handlePageChange"
+      />
     </div>
   </div>
 </template>
